@@ -17,6 +17,7 @@ add_executable(
   simple_test.cpp
   random_test.cpp
   multi_consumer.cpp
+  string_test.cpp
 )
 target_link_libraries(
 ProducerConsumerTest  GTest::gtest_main

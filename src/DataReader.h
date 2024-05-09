@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
+#include <memory>
 
 template<class T>
 class DataReader {
@@ -52,3 +54,11 @@ public:
         return m_current == m_memCollection.size();
     }
 };
+
+template<class T>
+auto getVectorDataReader(const std::vector<T>& vec)
+{
+    using VectorDataReader = MemoryDataReader<T, std::vector<T>>;
+    std::unique_ptr<VectorDataReader> memDataReader = std::make_unique<VectorDataReader>(vec);
+    return memDataReader;
+}

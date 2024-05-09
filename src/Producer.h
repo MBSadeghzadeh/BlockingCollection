@@ -57,7 +57,7 @@ void Producer<T, R>::produce()
         if (!m_dataReader->eof())
         {
             input = m_dataReader->getNext();
-            
+
             //std::cout << "producer(" << std::this_thread::get_id() << "):" << input << std::endl;
             if (input != m_stopValue)
             {
